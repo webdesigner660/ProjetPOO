@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>MoinsCherBnb.com</h1>
+    </header>
+
+    <main>
+        <div class="register-container">
+            <h2>Inscription</h2>
+            <form action="" method="POST">
+                <div class="form-group">
+                    <label for="firstname">Prénom</label>
+                    <input type="text" id="firstname" name="firstname" placeholder="Entrez votre prénom" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="lastname">Nom</label>
+                    <input type="text" id="lastname" name="lastname" placeholder="Entrez votre nom" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Adresse email</label>
+                    <input type="email" id="email" name="email" placeholder="Entrez votre email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" id="password" name="password" placeholder="Créez un mot de passe" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Téléphone :</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="role">Rôle :</label>
+                    <select id="role" name="role" required>
+                        <option value="user">Utilisateur</option>
+                        <option value="admin">Administrateur</option>
+                    </select>
+                </div>
+
+
+                <button type="submit" class="register-button">S'inscrire</button>
+            </form>
+            <p>Déjà inscrit ? <a href="/connexion">Connectez-vous</a></p>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2024 MoinsCherBnb.com - Tous droits réservés
+    </footer>
+</body>
+
+</html>

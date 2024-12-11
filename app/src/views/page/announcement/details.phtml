@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails de l'annonce</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Détails de l'annonce</h1>
+    </header>
+
+    <main>
+        <!-- Vérification si l'annonce existe -->
+        <?php if ($announcement): ?>
+            <h2><?php echo $announcement->getTitle(); ?></h2>
+            <p>Description : <?php echo $announcement->getDescription(); ?></p>
+            <p>Prix : <?php echo $announcement->getPrice(); ?>€</p>
+            <p>Surface : <?php echo $announcement->getSize(); ?> m²</p>
+            <p>Nombre de couchages : <?php echo $announcement->getSleeping(); ?></p>
+        <?php else: ?>
+            <p>Cette annonce n'existe pas ou a été supprimée.</p>
+        <?php endif; ?>
+
+        <a href="/reservation/<?php echo $announcement->getId() ?>" class="reserve-button" id="detail-reservation">Réserver</a>
+        </form>
+    </main>
+
+    <footer>
+        <a href=" /">Retour à l'accueil</a>
+    </footer>
+</body>
+
+</html>
