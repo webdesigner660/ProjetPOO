@@ -1,0 +1,98 @@
+/* Réinitialisation de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corps principal */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa; /* Couleur de fond légère */
+    color: #333; /* Couleur principale du texte */
+    margin: 0;
+    padding: 0;
+}
+
+/* En-tête */
+header {
+    background-color: #c0392b; /* Rouge agréable */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 3px solid #e74c3c; /* Rouge plus vif pour la bordure */
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Contenu principal */
+main {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Légère ombre */
+}
+
+/* Titres */
+main h2 {
+    color: #c0392b; /* Rouge agréable */
+    margin-bottom: 15px;
+}
+
+/* Paragraphes */
+main p {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+/* Bouton Réserver */
+.reserve-button {
+    display: inline-block;
+    margin-top: 40px; /* Espacement avec les infos précédentes */
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #c0392b; /* Rouge agréable */
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.reserve-button:hover {
+    background-color: #e74c3c; /* Rouge plus vif au survol */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background: #343a40; /* Gris foncé */
+    color: white;
+}
+
+footer a {
+    color: #c0392b; /* Rouge agréable */
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Espacement spécifique pour la page des détails */
+.details-content p {
+    margin-bottom: 20px; /* Espacement standard sous le texte */
+}
+
+.reserve-button.detail-page {
+    margin-top: 50px; /* Espace supplémentaire pour le bouton Réserver */
+}

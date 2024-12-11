@@ -1,0 +1,7 @@
+UTILISATEUR( id, email, mot de passe, nom, prénom, téléphone, id_role, #id_adresse )
+VOITURE( label, places assises, motorisation, immatriculation, prix journée, prix km supplémentaire, image )
+ADRESSE( id, ville, pays )
+CATEGORIE( id, label )
+VOITURE_CATEGORIE( #id_voiture, #id_catégorie )
+LOCATION( id, date début, date fin, compteur début, compteur fin, #id_utilisateur_client, #id_voiture )
+   

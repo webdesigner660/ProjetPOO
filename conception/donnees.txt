@@ -1,0 +1,25 @@
+client / chef / commerciaux
+- email           => chaîne de carractères
+- mot de passe    => chaîne de carractères
+- prénom          => chaîne de carractères
+- nom             => chaîne de carractères
+- num. téléphone  => chaîne de carractères
+- role            => nombre entier
+
+voiture
+- label             => chaîne de carractères           
+- places assises    => nombre entier
+- motorisation      => nombre entier
+- numéro d'immat.   => chaîne de carractères
+- prix par journée  => nombre décimal
+- prix km suppl.    => nombre décimal
+- image             => chaîne de carractères
+
+catégorie de voiture
+- label => chaîne de carractères
+
+louer une voiture
+- date début            => date
+- date fin              => date
+- kilométrage départ    => nombre entier
+- kilométrage retour    => nombre entier

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservation - Détails</title>
+    <link rel="stylesheet" href="/css/style.css"> <!-- Lien vers ton CSS -->
+</head>
+
+<body>
+    <header>
+        <h1>Réservez cette annonce</h1>
+    </header>
+
+    <main>
+        <!-- Vérification si l'annonce existe -->
+        <?php if ($reservation): ?>
+            <h2><?php echo $reservation->getTitle(); ?></h2>
+            <p>Description : <?php echo $reservation->getDescription(); ?></p>
+            <p>Prix : <?php echo $reservation->getPrice(); ?>€</p>
+            <p>Surface : <?php echo $reservation->getSize(); ?> m²</p>
+            <p>Nombre de couchages : <?php echo $reservation->getSleeping(); ?></p>
+        <?php else: ?>
+            <p>Cette annonce n'existe pas ou a été supprimée.</p>
+        <?php endif; ?>
+
+        <!-- Formulaire de réservation -->
+        <form action="/reservation/validate" method="POST" class="reservation-form">
+            <!-- Date de début -->
+            <div class="form-group">
+                <label for="date_start">Date de début</label>
+                <input type="date" id="date_start" name="date_start" required>
+            </div>
+
+            <!-- Date de fin -->
+            <div class="form-group">
+                <label for="date_end">Date de fin</label>
+                <input type="date" id="date_end" name="date_end" required>
+            </div>
+
+            <!-- Bouton de validation -->
+            <button type="submit" class="btn-reservation">Valider la réservation</button>
+        </form>
+    </main>
+
+    <footer>
+        <a href="/">Retour à l'accueil</a>
+    </footer>
+
+</body>
+
+</html>

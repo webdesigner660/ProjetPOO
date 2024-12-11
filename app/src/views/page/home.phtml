@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoinsCherBnb.com - Accueil</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+    <!-- En-tête -->
+    <header>
+        <div class="header-container">
+            <h1>MoinsCherBnb.com</h1>
+            <div class="auth-buttons">
+                <a href="/connexion" class="reserve-button">Connexion</a>
+                <a href="/inscription" class="reserve-button">Inscription</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteneur principal -->
+    <main>
+        <div class="announcements-container">
+            <!-- Carte 1 -->
+            <!-- <div class="card">
+                <div class="card-image">
+                    <img src="assets/images/announcement1.jpg" alt="Appartement à Paris">
+                </div>
+                <div class="card-details">
+                    <h2>Appartement cosy à Paris</h2>
+                    <p>Prix : 120€/nuit</p>
+                </div>
+                <button class="reserve-button">Réserver</button>
+            </div>-->
+            <?php
+
+            use App\Model\Repository\RepoManager;
+
+            foreach ($appartements as $appartement): ?>
+
+                <div class="card">
+                    <div class="card-image">
+                        <img src="../../../chalet.jpg" alt="">
+                    </div>
+                    <div class="card-details">
+                        <h2><?= $appartement->getTitle() ?></h2>
+                        <p>Prix : <?= $appartement->getPrice() ?>€/nuit</p>
+                        <p> Adresse :
+                            <?php $adress = RepoManager::getRM()->getAdressRepo()->getById($appartement->getIdAdress());
+                            echo $adress->getStreet() . " " . $adress->getCity() . " " .  $adress->getCountry();
+                            ?>
+                        </p>
+                    </div>
+                    <a href="/announcement/details/<?php echo $appartement->getId(); ?>" class="reserve-button">Afficher l'annonce</a>
+
+                </div>
+            <?php endforeach ?>
+
+        </div>
+    </main>
+
+    <!-- Pied de page -->
+    <footer>
+        &copy; 2024 MoinsCherBnb.com - Mentions légales et tous droits réservés
+    </footer>
+</body>
+
+</html>
