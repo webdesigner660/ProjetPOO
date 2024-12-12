@@ -18,11 +18,12 @@ use App\Controller\PageController;
 
 use App\Controller\UserController;
 use App\Controller\AdminController;
-use App\Middleware\AdminMiddleware;
-use App\Controller\AnnouncementController;
-use App\Controller\InscriptionController;
 use App\Controller\LoginController;
+use App\Middleware\AdminMiddleware;
+use App\Controller\DashboardController;
+use App\Controller\InscriptionController;
 use App\Controller\ReservationController;
+use App\Controller\AnnouncementController;
 use MiladRahimi\PhpRouter\Routing\Attributes;
 use MiladRahimi\PhpRouter\Exceptions\RouteNotFoundException;
 
@@ -73,9 +74,14 @@ final class App
         $this->router->get('/announcement/details/{id}', [AnnouncementController::class, 'details']);
 
         $this->router->get('/connexion', [LoginController::class, 'login']);
+        $this->router->post('/connexion', [LoginController::class, 'checkCredentials'] );
+        $this->router->get('/account',[LoginController::class, 'account']);
         $this->router->get('/inscription', [InscriptionController::class, 'inscription']);
         $this->router->post('/inscription', [InscriptionController::class, 'create']);
         $this->router->get('/reservation/{id}',[ReservationController::class, 'reservation']);
+        
+        
+        
 
         // TODO: Groupe Visiteurs (non-connectés)
 

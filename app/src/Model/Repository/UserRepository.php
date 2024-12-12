@@ -116,4 +116,28 @@ class UserRepository extends Repository
         }
         return $success;
     }
+
+    public function checkAuth(string $email, string $password): ?User
+    {
+        $query = sprintf(
+            'SELECT * FROM `%s` WHERE `email`=:email AND `password`=:password',
+            $this->getTableName()
+        );
+
+        $sth = $this->pdo->prepare($query);
+
+        if (! $sth) {
+            return null;
+        }
+
+        $sth->execute(['email' => $email, 'password' => $password]);
+
+        $user_data = $sth->fetch();
+
+        if (! $user_data) {
+            return null;
+        }
+
+        return new User($user_data);
+    }
 }
