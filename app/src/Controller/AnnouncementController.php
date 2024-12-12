@@ -29,4 +29,14 @@ class AnnouncementController extends Controller
 
     }
 
+    public function CreateAnnonce(): void
+    {
+        $view = new View('page:create-annonce');
+        $data = [
+            'title' => 'Créer une annonce - MoinCherBnb.com'
+            
+        ];
+        $view->render($data);
+    }
+
 }

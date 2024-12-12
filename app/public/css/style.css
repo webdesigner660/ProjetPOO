@@ -1,4 +1,3 @@
-/* Réinitialisation de base */
 * {
     margin: 0;
     padding: 0;
@@ -9,19 +8,23 @@
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    background-color: #f8f9fa; /* Couleur de fond légère */
-    color: #333; /* Couleur principale du texte */
+    background-color: #f8f9fa;
+    /* Couleur de fond légère */
+    color: #333;
+    /* Couleur principale du texte */
     margin: 0;
     padding: 0;
 }
 
 /* En-tête */
 header {
-    background-color: #c0392b; /* Rouge agréable */
+    background-color: #c0392b;
+    /* Rouge agréable */
     color: white;
     padding: 20px;
     text-align: center;
-    border-bottom: 3px solid #e74c3c; /* Rouge plus vif pour la bordure */
+    border-bottom: 3px solid #e74c3c;
+    /* Rouge plus vif pour la bordure */
 }
 
 header h1 {
@@ -35,12 +38,14 @@ main {
     padding: 20px;
     background: white;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Légère ombre */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Légère ombre */
 }
 
 /* Titres */
 main h2 {
-    color: #c0392b; /* Rouge agréable */
+    color: #c0392b;
+    /* Rouge agréable */
     margin-bottom: 15px;
 }
 
@@ -50,13 +55,16 @@ main p {
     font-size: 16px;
 }
 
-/* Bouton générique */
-button {
+/* Bouton Réserver */
+.reserve-button {
     display: inline-block;
+    margin-top: 40px;
+    /* Espacement avec les infos précédentes */
     padding: 10px 20px;
     font-size: 16px;
     color: white;
-    background-color: #c0392b; /* Rouge agréable */
+    background-color: #c0392b;
+    /* Rouge agréable */
     text-decoration: none;
     border: none;
     border-radius: 5px;
@@ -65,26 +73,26 @@ button {
     transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #e74c3c; /* Rouge plus vif au survol */
-}
-
-/* Bouton spécifique pour "Mes Réservations" et "Créer une annonce" */
-.reserve-button, .create-announcement-button {
-    margin-top: 30px; /* Espacement entre les sections */
+.reserve-button:hover {
+    background-color: #e74c3c;
+    /* Rouge plus vif au survol */
 }
 
 /* Footer */
 footer {
-    text-align: center;
-    margin-top: 20px;
-    padding: 10px;
-    background: #343a40; /* Gris foncé */
-    color: white;
+    background-color: #e74c3c;
+        color: white;
+        text-align: center;
+        padding: 15px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
 }
 
 footer a {
-    color: #c0392b; /* Rouge agréable */
+    color: #c0392b;
+    /* Rouge agréable */
     text-decoration: none;
 }
 
@@ -92,3 +100,199 @@ footer a:hover {
     text-decoration: underline;
 }
 
+/* Espacement spécifique pour la page des détails */
+.details-content p {
+    margin-bottom: 20px;
+    /* Espacement standard sous le texte */
+}
+
+.reserve-button.detail-page {
+    margin-top: 50px;
+    /* Espace supplémentaire pour le bouton Réserver */
+}
+
+body.owner-container {
+    background-color: #f8f9fa;
+    /* Fond clair */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* En-tête spécifique à la page */
+body.owner-container header {
+    background-color: #c0392b;
+    /* Rouge agréable */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 3px solid #e74c3c;
+    /* Rouge plus vif */
+}
+
+body.owner-container header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Conteneur principal */
+body.owner-container main {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Ombre subtile */
+}
+
+/* Formulaire */
+body.owner-container .create-annonce-form .form-group {
+    margin-bottom: 15px;
+}
+
+body.owner-container .create-annonce-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #c0392b;
+    /* Rouge agréable */
+}
+
+body.owner-container .create-annonce-form input,
+body.owner-container .create-annonce-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+body.owner-container .create-annonce-form textarea {
+    resize: vertical;
+    /* Permet le redimensionnement vertical */
+}
+
+body.owner-container .create-announcement-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: #c0392b;
+    /* Rouge agréable */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+body.owner-container .create-announcement-button:hover {
+    background-color: #e74c3c;
+    /* Rouge plus vif */
+    transform: scale(1.03);
+    /* Zoom léger au survol */
+}
+
+/* Pied de page */
+body.owner-container footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #c0392b;
+    /* Rouge agréable */
+    color: white;
+    margin-top: 20px;
+}
+
+body.owner-container footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+body.owner-container {
+    background-color: #f8f9fa;
+    /* Fond clair */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* En-tête spécifique à la page */
+body.owner-container header {
+    background-color: #c0392b;
+    /* Rouge agréable */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 3px solid #e74c3c;
+    /* Rouge plus vif */
+}
+
+body.owner-container header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Conteneur principal */
+body.owner-container main {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Ombre subtile */
+}
+
+/* Titres et texte principal */
+body.owner-container h1 {
+    color: #c0392b;
+    /* Rouge agréable */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+body.owner-container p {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* Boutons */
+body.owner-container a button {
+    display: inline-block;
+    padding: 15px 25px;
+    margin: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: #c0392b;
+    /* Rouge agréable */
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+body.owner-container a button:hover {
+    background-color: #e74c3c;
+    /* Rouge plus vif au survol */
+    transform: scale(1.05);
+    /* Zoom léger au survol */
+}
+
+/* Pied de page */
+body.owner-container footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #c0392b;
+    /* Rouge agréable */
+    color: white;
+    margin-top: 20px;
+}
+
+body.owner-container footer p {
+    margin: 0;
+    font-size: 14px;
+}

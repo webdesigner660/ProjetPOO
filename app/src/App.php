@@ -24,6 +24,7 @@ use App\Controller\DashboardController;
 use App\Controller\InscriptionController;
 use App\Controller\ReservationController;
 use App\Controller\AnnouncementController;
+use App\Model\Entity\Announcement;
 use MiladRahimi\PhpRouter\Routing\Attributes;
 use MiladRahimi\PhpRouter\Exceptions\RouteNotFoundException;
 
@@ -81,6 +82,7 @@ final class App
         $this->router->get('/inscription', [InscriptionController::class, 'inscription']);
         $this->router->post('/inscription', [InscriptionController::class, 'create']);
         $this->router->get('/reservation/{id}', [ReservationController::class, 'reservation']);
+        $this->router->get('/create-annonce', [AnnouncementController::class, 'CreateAnnonce']);
 
 
 

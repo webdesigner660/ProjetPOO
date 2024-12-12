@@ -22,8 +22,8 @@ class PageController extends Controller
         // die();
         $data = [
             'title' => 'Accueil - MoinCherBnb.com',
-            'appartements'=>$appartements
-            
+            'appartements' => $appartements
+
         ];
 
         $view->render($data);

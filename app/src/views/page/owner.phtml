@@ -6,20 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tableau de bord Propriétaire</title>
     <link rel="stylesheet" href="/css/style.css">
-
 </head>
 
-<body>
-    <h1>Bienvenue, Propriétaire</h1>
-    <p>Voici votre tableau de bord.</p>
-    <!-- Bouton pour créer une annonce -->
-    <a href="create_announcement.phtml">
-        <button>Créer une Annonce</button>
-    </a>
-    <!-- Bouton pour voir les annonces -->
-    <a href="my_announcements.phtml">
-        <button>Mes Annonces</button>
-    </a>
+<body class="owner-container">
+    <!-- En-tête -->
+    <header>
+        <h1>Bienvenue, Propriétaire</h1>
+    </header>
+
+    <!-- Contenu principal -->
+    <main>
+        <p>Voici votre tableau de bord.</p>
+        <!-- Bouton pour créer une annonce -->
+        <a href="/create-annonce">
+            <button>Créer une Annonce</button>
+        </a>
+        <br>
+        <!-- Bouton pour voir les annonces -->
+        <a href="my_announcements.phtml">
+            <button>Mes annonces</button>
+        </a>
+    </main>
+
+    <!-- Pied de page -->
+    <footer>
+        <p>&copy; 2024 MoinCherBnb.com | Tous droits réservés</p>
+    </footer>
 </body>
 
 </html>
