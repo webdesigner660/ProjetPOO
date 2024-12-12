@@ -12,7 +12,7 @@ class User extends Entity
     protected string $firstname;
     protected string $lastname;
     protected string $phone;
-    protected string $role;
+    protected int $role;
 
     // Getter et Setter pour l'ID
     public function getId(): int
@@ -87,12 +87,12 @@ class User extends Entity
     }
 
     // Getter et Setter pour role
-    public function getRole(): string
+    public function getRole(): int
     {
         return $this->role;
     }
 
-    public function setRole(string $role): self
+    public function setRole(int $role): self
     {
         $this->role = $role;
         return $this;

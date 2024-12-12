@@ -28,4 +28,22 @@ class PageController extends Controller
 
         $view->render($data);
     }
+
+    public function indexOwner(): void
+    {
+        $view = new View('page:owner');
+        $data = [
+            'title' => 'Propriétaire - MoinCherBnb.com'
+        ];
+        $view->render($data);
+    }
+
+    public function indexUser(): void
+    {
+        $view = new View('page:user');
+        $data = [
+            'title' => 'Utilisateur - MoinCherBnb.com'
+        ];
+        $view->render($data);
+    }
 }

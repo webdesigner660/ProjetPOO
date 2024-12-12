@@ -5,7 +5,7 @@ namespace App\Controller;
 use Symplefony\Controller;
 use Symplefony\View;
 
-class Dashboard extends Controller
+class Account extends Controller
 {
     public function account()
     {

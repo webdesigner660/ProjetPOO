@@ -63,7 +63,14 @@ class LoginController extends Controller
         // On enregistre l'utilisateur correspondant dans la session
         Session::set(Session::USER, $user);
 
-        $this->redirect('/account');
+        if($user->getRole() === 1) {
+            $this->redirect('/home/user');
+        }
+
+        if($user->getRole() === 2) {
+            $this->redirect('/home/owner');
+        }
+
 
 }
 

@@ -70,18 +70,20 @@ final class App
 
         // -- Pages communes --
         $this->router->get('/', [PageController::class, 'index']);
+        $this->router->get('/home/user', [PageController::class, 'indexUser']);
+        $this->router->get('/home/owner', [PageController::class, 'indexOwner']);
 
         $this->router->get('/announcement/details/{id}', [AnnouncementController::class, 'details']);
 
         $this->router->get('/connexion', [LoginController::class, 'login']);
-        $this->router->post('/connexion', [LoginController::class, 'checkCredentials'] );
-        $this->router->get('/account',[LoginController::class, 'account']);
+        $this->router->post('/connexion', [LoginController::class, 'checkCredentials']);
+        $this->router->get('/account', [LoginController::class, 'account']);
         $this->router->get('/inscription', [InscriptionController::class, 'inscription']);
         $this->router->post('/inscription', [InscriptionController::class, 'create']);
-        $this->router->get('/reservation/{id}',[ReservationController::class, 'reservation']);
-        
-        
-        
+        $this->router->get('/reservation/{id}', [ReservationController::class, 'reservation']);
+
+
+
 
         // TODO: Groupe Visiteurs (non-connectés)
 

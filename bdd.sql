@@ -6,7 +6,7 @@ CREATE TABLE `user` (
     `firstname` varchar(50),
     `lastname` varchar(50),
     `phone` varchar(15),
-    `role` varchar(20)
+    `role` INT
 );
 
 CREATE TABLE `announcement` (

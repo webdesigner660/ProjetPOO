@@ -50,10 +50,9 @@ main p {
     font-size: 16px;
 }
 
-/* Bouton Réserver */
-.reserve-button {
+/* Bouton générique */
+button {
     display: inline-block;
-    margin-top: 40px; /* Espacement avec les infos précédentes */
     padding: 10px 20px;
     font-size: 16px;
     color: white;
@@ -66,8 +65,13 @@ main p {
     transition: background-color 0.3s ease;
 }
 
-.reserve-button:hover {
+button:hover {
     background-color: #e74c3c; /* Rouge plus vif au survol */
+}
+
+/* Bouton spécifique pour "Mes Réservations" et "Créer une annonce" */
+.reserve-button, .create-announcement-button {
+    margin-top: 30px; /* Espacement entre les sections */
 }
 
 /* Footer */
@@ -88,11 +92,3 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Espacement spécifique pour la page des détails */
-.details-content p {
-    margin-bottom: 20px; /* Espacement standard sous le texte */
-}
-
-.reserve-button.detail-page {
-    margin-top: 50px; /* Espace supplémentaire pour le bouton Réserver */
-}
