@@ -296,3 +296,80 @@ body.owner-container footer p {
     margin: 0;
     font-size: 14px;
 }
+
+body.user-container {
+    background-color: #f8f9fa;
+    /* Fond clair */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* En-tête spécifique à l'utilisateur */
+body.user-container header.user-header {
+    background-color: #c0392b;
+    /* Rouge agréable */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 3px solid #e74c3c;
+    /* Rouge vif pour la bordure */
+}
+
+body.user-container header.user-header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Conteneur principal */
+body.user-container main.user-main {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Ombre subtile */
+    text-align: center;
+}
+
+/* Boutons */
+body.user-container a.user-button-link {
+    text-decoration: none;
+}
+
+body.user-container .user-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: #c0392b;
+    /* Rouge agréable */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    margin-top: 15px;
+}
+
+body.user-container .user-button:hover {
+    background-color: #e74c3c;
+    /* Rouge plus vif */
+    transform: scale(1.03);
+    /* Zoom léger au survol */
+}
+
+/* Pied de page */
+body.user-container footer.user-footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #e74c3c;
+    color: white;
+    margin-top: 20px;
+}
+
+body.user-container footer.user-footer p {
+    margin: 0;
+    font-size: 14px;
+}

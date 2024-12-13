@@ -21,6 +21,7 @@
             <p>Prix : <?php echo $reservation->getPrice(); ?>€</p>
             <p>Surface : <?php echo $reservation->getSize(); ?> m²</p>
             <p>Nombre de couchages : <?php echo $reservation->getSleeping(); ?></p>
+            <!-- TODO : EQUIPEMENT -->
         <?php else: ?>
             <p>Cette annonce n'existe pas ou a été supprimée.</p>
         <?php endif; ?>

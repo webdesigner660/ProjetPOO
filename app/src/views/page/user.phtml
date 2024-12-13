@@ -8,13 +8,22 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body>
-    <h1>Bienvenue, Utilisateur</h1>
-    <p>Voici votre tableau de bord personnel.</p>
-    <!-- Bouton pour accéder aux réservations -->
-    <a href="reservations.phtml">
-        <button>Mes Réservations</button>
-    </a>
+<body class="user-container">
+    <header class="user-header">
+        <h1>Bienvenue, Utilisateur</h1>
+    </header>
+
+    <main class="user-main">
+        <p>Voici votre tableau de bord personnel.</p>
+        <!-- Bouton pour accéder aux réservations -->
+        <a href="reservations.phtml" class="user-button-link">
+            <button class="user-button">Mes Réservations</button>
+        </a>
+    </main>
+
+    <footer class="user-footer">
+        <p>&copy; 2024 - Votre site. Tous droits réservés.</p>
+    </footer>
 </body>
 
 </html>

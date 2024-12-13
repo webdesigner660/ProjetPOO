@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Session;
 use Symplefony\View;
 use App\Model\Entity\User;
 use Symplefony\Controller;
@@ -35,7 +36,17 @@ class InscriptionController extends Controller
             $this->redirect('/users/add');
         }
 
-        $this->redirect('/users');
+        // On enregistre l'utilisateur correspondant dans la session
+        Session::set(Session::USER, $user);
+
+        if ($user->getRole() === 1) {
+            $this->redirect('/home/user');
+        }
+
+        if ($user->getRole() === 2) {
+            $this->redirect('/home/owner');
+        }
+    
 
     }
 }
