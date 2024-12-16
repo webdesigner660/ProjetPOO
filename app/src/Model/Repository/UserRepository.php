@@ -85,7 +85,7 @@ class UserRepository extends Repository
             'email' => $user->getEmail(),
             'firstname' => $user->getFirstname(),
             'lastname' => $user->getLastname(),
-            'phone_number' => $user->getPhoneNumber(),
+            'phone_number' => $user->getPhone(),
             'id' => $user->getId()
         ]);
         // Si echec de la mise à jour

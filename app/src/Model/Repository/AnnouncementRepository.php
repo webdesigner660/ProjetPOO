@@ -51,20 +51,42 @@ class AnnouncementRepository extends Repository
     //cRud: read tous les items
     public function getAll(): array
     {
-        $query = "SELECT * FROM announcement";
-        $sth = Database::getPDO()->prepare($query);
-        $sth->execute();
+        $announcements = $this->readAll(Announcement::class);
+        return $announcements;
+    }
 
-        $results = $sth->fetchAll(PDO::FETCH_ASSOC);
+    /* cRud: Read tous les items */
+    public function getAllForOwner(int $id): array
+    {
+        $query = sprintf(
+            'SELECT * FROM `%s` WHERE id_owner=:id_owner',
+            $this->getTableName()
+        );
 
+        $sth = $this->pdo->prepare($query);
+
+        // Si la préparation échoue
+        if (! $sth) {
+            return [];
+        }
+
+        $success = $sth->execute(['id_owner' => $id]);
+
+        // Si echec
+        if (! $success) {
+            return [];
+        }
+
+        // Récupération des résultats
         $announcements = [];
-        foreach ($results as $row) {
-            $announcements[] = new Announcement($row);
+
+        while ($announcement_data = $sth->fetch()) {
+            $announcement = new Announcement($announcement_data);
+            $announcements[] = $announcement;
         }
 
         return $announcements;
     }
-
 
     //cRud: read un item par son id
     public function getById(int $id): ?Announcement
@@ -110,6 +132,4 @@ class AnnouncementRepository extends Repository
         }
         return $announcement;
     }
-
-    
 }

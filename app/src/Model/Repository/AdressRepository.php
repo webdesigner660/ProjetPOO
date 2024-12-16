@@ -16,8 +16,8 @@ class AdressRepository extends Repository
     {
         $query = sprintf(
             'INSERT INTO `%s` 
-                (`city`,`country`) 
-                VALUES (:city,:country)',
+                (`city`,`country`,`street`) 
+                VALUES (:city,:country,:street)',
             $this->getTableName()
         );
         $sth = $this->pdo->prepare($query);
@@ -27,7 +27,9 @@ class AdressRepository extends Repository
         }
         $success = $sth->execute([
             'city' => $adress->getCity(),
-            'country' => $adress->getCountry()
+            'country' => $adress->getCountry(),
+            'street' => $adress->getStreet()
+
         ]);
         // Si echec de l'insertion
         if (! $success) {
@@ -55,6 +57,7 @@ class AdressRepository extends Repository
                 SET
                     `city`=:city,
                     `country`=:country
+                    `street`=:street
                 WHERE id=:id',
             $this->getTableName()
         );
@@ -66,6 +69,7 @@ class AdressRepository extends Repository
         $success = $sth->execute([
             'city' => $adress->getCity(),
             'country' => $adress->getCountry(),
+            'street' => $adress->getStreet(),
             'id' => $adress->getId()
         ]);
         // Si echec de la mise à jour

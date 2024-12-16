@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Annonces</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="owner-container">
+    <header>
+        <h1>Mes Annonces</h1>
+        <a href="/create-annonce" class="create-button">Créer une nouvelle annonce</a>
+    </header>
+
+    <main class="announcement-list">
+        <!-- Vérifie s'il y a des annonces -->
+        <?php if (!empty($announcements)) : ?>
+            <div class="announcements">
+                <!-- Boucle pour afficher chaque annonce -->
+                <?php foreach ($announcements as $announcement) : ?>
+                    <div class="announcement-card">
+                        <h2 class="announcement-title"><?= htmlspecialchars($announcement->getTitle()) ?></h2>
+                        <p><strong>Prix :</strong> <?= htmlspecialchars($announcement->getPrice()) ?> €/nuit</p>
+                        <p><strong>Adresse :</strong> <?= htmlspecialchars($announcement->getIdAdress()) ?></p>
+                        <p><strong>Surface :</strong> <?= htmlspecialchars($announcement->getSize()) ?> m²</p>
+                        <p><strong>Couchage :</strong> <?= htmlspecialchars($announcement->getSleeping()) ?> personnes</p>
+                        <p class="announcement-description"><?= nl2br(htmlspecialchars($announcement->getDescription())) ?></p>
+                        
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        <?php else : ?>
+            <!-- Message si aucune annonce -->
+            <p class="no-announcements">Vous n'avez pas encore créé d'annonces.</p>
+        <?php endif; ?>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Gestion des Annonces. Tous droits réservés.</p>
+    </footer>
+</body>
+
+</html>

@@ -16,7 +16,7 @@ class Announcement extends Entity
     protected int $sleeping;
     protected int $equipment_id;
     protected int $accommodation_id;
-    protected string $title;
+    protected $title;
 
     // Getter et Setter pour l'ID
     public function getId(): int
@@ -126,19 +126,13 @@ class Announcement extends Entity
         return $this;
     }
 
-    /**
-     * Get the value of title
-     */ 
+    
     public function getTitle()
     {
         return $this->title;
     }
 
-    /**
-     * Set the value of title
-     *
-     * @return  self
-     */ 
+   
     public function setTitle($title)
     {
         $this->title = $title;

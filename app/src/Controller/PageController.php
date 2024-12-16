@@ -10,6 +10,7 @@ use Symplefony\Database;
 use Symplefony\View;
 
 use App\Model\UserModel;
+use App\Session;
 
 class PageController extends Controller
 {
@@ -36,6 +37,7 @@ class PageController extends Controller
             'title' => 'Propriétaire - MoinCherBnb.com'
         ];
         $view->render($data);
+        var_dump(RepoManager::getRM()->getAnnouncementRepo()->getAllForOwner(Session::get(Session::USER)->getId()));
     }
 
     public function indexUser(): void

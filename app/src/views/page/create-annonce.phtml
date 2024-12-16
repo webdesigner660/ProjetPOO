@@ -1,10 +1,11 @@
+<!DOCTYPE html>
 <html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Créer une Annonce</title>
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="owner-container">
@@ -12,11 +13,31 @@
         <h1>Créer une Nouvelle Annonce</h1>
     </header>
     <main>
-        <form action="submit_annonce.php" method="POST" class="create-annonce-form">
-            <!-- Titre de l'annonce -->
+        <form action="/create-annonce" method="POST" class="create-annonce-form">
+
+
+
+            <!-- ID Adresse -->
             <div class="form-group">
-                <label for="title">Titre de l'annonce :</label>
-                <input type="text" id="title" name="title" placeholder="Entrez le titre" required>
+                <label for="city">Ville :</label>
+                <input type="text" id="city" name="city" placeholder="Entrez la ville" required>
+            </div>
+
+            <div class="form-group">
+                <label for="country">Pays :</label>
+                <input type="text" id="country" name="country" placeholder="Entrez le pays" required>
+            </div>
+
+            <div class="form-group">
+                <label for="street">Rue :</label>
+                <input type="text" id="street" name="street" placeholder="Entrez la rue" required>
+            </div>
+
+
+            <!-- Taille -->
+            <div class="form-group">
+                <label for="size">Taille (m²) :</label>
+                <input type="number" id="size" name="size" placeholder="Entrez la taille" required>
             </div>
 
             <!-- Prix -->
@@ -25,16 +46,27 @@
                 <input type="number" id="price" name="price" placeholder="Entrez le prix" required min="0" step="0.01">
             </div>
 
-            <!-- Adresse -->
-            <div class="form-group">
-                <label for="address">Adresse :</label>
-                <input type="text" id="address" name="address" placeholder="Entrez l'adresse" required>
-            </div>
-
             <!-- Description -->
             <div class="form-group">
                 <label for="description">Description :</label>
                 <textarea id="description" name="description" rows="5" placeholder="Ajoutez une description" required></textarea>
+            </div>
+
+            <!-- Nombre de couchages -->
+            <div class="form-group">
+                <label for="sleeping">Nombre de couchages :</label>
+                <input type="number" id="sleeping" name="sleeping" placeholder="Entrez le nombre de couchages" required>
+            </div>
+
+            <!-- Type d'hébergement (ID) -->
+            <div class="form-group">
+                <label for="accommodation_id">Type d'hébergement :</label>
+                <input type="number" id="accommodation_id" name="accommodation_id" placeholder="Entrez le type de l'hébergement" required>
+            </div>
+
+            <div class="form-group">
+                <label for="title">Titre de l'annonce :</label>
+                <input type="text" id="title" name="title" placeholder="Entrez le titre" required>
             </div>
 
             <!-- Bouton de soumission -->

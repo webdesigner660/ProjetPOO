@@ -6,22 +6,9 @@ use Symplefony\Model\Entity;
 
 class Adress extends Entity
 {
-    protected int $id_adress;
     protected string $city;
     protected string $country;
     protected string $street;
-
-    // Getter et Setter pour id_adress
-    public function getIdAdress(): int
-    {
-        return $this->id_adress;
-    }
-
-    public function setIdAdress(int $id_adress): self
-    {
-        $this->id_adress = $id_adress;
-        return $this;
-    }
 
     // Getter et Setter pour city
     public function getCity(): string
