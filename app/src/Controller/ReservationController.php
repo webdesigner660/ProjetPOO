@@ -2,9 +2,10 @@
 
 namespace App\Controller;
 
-use App\Model\Repository\RepoManager;
-use Symplefony\Controller;
 use Symplefony\View;
+use Symplefony\Controller;
+use App\Controller\AuthController;
+use App\Model\Repository\RepoManager;
 
 class ReservationController extends Controller
 {
@@ -24,6 +25,16 @@ class ReservationController extends Controller
 
     }
 
+    public function CheckAuthReservation(): void
+    {
+    if (AuthController::isAuth()) {
+        $this->redirect('/reservation/{id}');
+    } else {
+        $this->redirect('/login');
+    };
 
+
+
+}
 
 }

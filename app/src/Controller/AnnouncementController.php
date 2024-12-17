@@ -53,18 +53,19 @@ class AnnouncementController extends Controller
 
         $announce = new Announcement(array(
             'id_owner' => Session::get(Session::USER)->getId(),
-            'title' => $announce_data['title'],
             'price' => $announce_data['price'],
+            'id_adress' => $adress_created->getId(),
             'size' => $announce_data['size'],
-            'description' => $announce_data['description'],
             'sleeping' => $announce_data['sleeping'],
             'accommodation_id' => $announce_data['accommodation_id'],
-            'id_adress' => $adress_created->getId()
+            'description' => $announce_data['description'],
+            'title' => $announce_data['title']
         ));
 
 
-
         $announce_created = RepoManager::getRM()->getAnnouncementRepo()->createAnnouncement($announce);
+
+        $announce_created->setAdress($adress_created);
 
 
         if (is_null($announce_created)) {
@@ -75,6 +76,7 @@ class AnnouncementController extends Controller
     }
 
     public function ViewAnnounce(): void
+
     {
 
         // Récupérer l'ID du propriétaire connecté
@@ -82,6 +84,15 @@ class AnnouncementController extends Controller
 
         // Récupérer les annonces via la méthode `getAllForOwner`
         $announcements = RepoManager::getRM()->getAnnouncementRepo()->getAllForOwner($id_owner);
+
+        foreach ($announcements as $announcement) {
+            $adress = RepoManager::getRM()->getAdressRepo()->getById($announcement->getIdAdress());
+            $type = RepoManager::getRM()->getTypeAccommodationRepo()->getById($announcement->getAccommodationId());
+            $announcement->setAdress($adress);
+            $announcement->setTypeAccommodation($type);
+        }
+
+
         $view = new View('page:announce');
         $data = [
             'title' => 'Gestion des annonces',

@@ -19,8 +19,8 @@ class AnnouncementRepository extends Repository
     public function createAnnouncement(Announcement $announcement): ?Announcement
     {
         $query = sprintf(
-            "INSERT INTO %s (id_owner, id_adress, size, price, description, sleeping, accommodation_id) 
-        VALUES (:id_owner, :id_adress, :size, :price, :description, :sleeping,:accommodation_id)",
+            "INSERT INTO %s (id_owner, id_adress, size, price, description, sleeping, accommodation_id, title) 
+        VALUES (:id_owner, :id_adress, :size, :price, :description, :sleeping,:accommodation_id, :title)",
             $this->getTableName()
         );
         $sth = $this->pdo->prepare($query);
@@ -35,7 +35,8 @@ class AnnouncementRepository extends Repository
             'price' => $announcement->getPrice(),
             'description' => $announcement->getDescription(),
             'sleeping' => $announcement->getSleeping(),
-            'accommodation_id' => $announcement->getAccommodationId()
+            'accommodation_id' => $announcement->getAccommodationId(),
+            'title' => $announcement->getTitle()
         ]);
         //si echec de l'insertion
 
@@ -106,7 +107,8 @@ class AnnouncementRepository extends Repository
                     `price`=:price,
                     `description`=:description,
                     `sleeping`=:sleeping,
-                    `accommodation_id`=:accommodation_id
+                    `accommodation_id`=:accommodation_id,
+                    `title`=:title
                 WHERE id=:id',
             $this->getTableName()
         );

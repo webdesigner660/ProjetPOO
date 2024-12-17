@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 namespace App\Model\Entity;
 
@@ -9,7 +9,6 @@ class Equipment extends Entity
     protected int $id;
     protected string $label;
 
-    // Getter et Setter pour l'ID
     public function getId(): int
     {
         return $this->id;
@@ -21,7 +20,6 @@ class Equipment extends Entity
         return $this;
     }
 
-    // Getter et Setter pour le label
     public function getLabel(): string
     {
         return $this->label;

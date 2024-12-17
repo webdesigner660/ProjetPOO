@@ -59,11 +59,18 @@
             </div>
 
             <!-- Type d'hébergement (ID) -->
-            <div class="form-group">
-                <label for="accommodation_id">Type d'hébergement :</label>
-                <input type="number" id="accommodation_id" name="accommodation_id" placeholder="Entrez le type de l'hébergement" required>
-            </div>
+            <label for="accommodation_type">Type de logement :</label>
+            <select id="accommodation_type" name="accommodation_id" required>
+                <option value="" disabled selected>Choisissez un type de logement</option>
+                <option value="1">Chambre</option>
+                <option value="2">Maison</option>
+                <option value="3">Appartement</option>
+                <option value="4">Villa</option>
+                <option value="5">Studio</option>
+                <option value="6">Chalet</option>
 
+                <!-- Ajoute d'autres types si nécessaire -->
+            </select>
             <div class="form-group">
                 <label for="title">Titre de l'annonce :</label>
                 <input type="text" id="title" name="title" placeholder="Entrez le titre" required>

@@ -3,13 +3,13 @@
 namespace App\Model\Repository;
 
 use App\Model\Entity\TypeAccommodation;
-use MiladRahimi\PhpRouter\Routing\Repository;
+use Symplefony\Model\Repository;
 
 class TypeAccommodationRepository extends Repository
 {
     protected function getTableName(): string
     {
-        return 'type_accommodations';
+        return 'TypeAccommodation';
     }
 
     /* Crud: Create */
@@ -70,5 +70,5 @@ class TypeAccommodationRepository extends Repository
             return null;
         }
         return $type_accommodation;
-    }
+        }
 }

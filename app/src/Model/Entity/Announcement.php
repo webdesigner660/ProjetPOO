@@ -12,11 +12,13 @@ class Announcement extends Entity
     protected int $id_adress;
     protected float $size;
     protected float $price;
-    protected string $description;
-    protected int $sleeping;
     protected int $equipment_id;
     protected int $accommodation_id;
     protected $title;
+    protected string $description;
+    protected int $sleeping;
+    protected Adress $adress;
+    protected TypeAccommodation $typeAccommodation;
 
     // Getter et Setter pour l'ID
     public function getId(): int
@@ -126,13 +128,13 @@ class Announcement extends Entity
         return $this;
     }
 
-    
+
     public function getTitle()
     {
         return $this->title;
     }
 
-   
+
     public function setTitle($title)
     {
         $this->title = $title;
@@ -140,4 +142,27 @@ class Announcement extends Entity
         return $this;
     }
 
+    public function getAdress(): Adress
+    {
+        return $this->adress;
+    }
+    public function setAdress(Adress $adress): self
+    {
+        $this->adress = $adress;
+        return $this;
+    }
+
+
+    public function getTypeAccommodation() : TypeAccommodation
+    {
+        return $this->typeAccommodation;
+    }
+
+
+    public function setTypeAccommodation( TypeAccommodation $typeAccommodation)
+    {
+        $this->typeAccommodation = $typeAccommodation;
+
+        return $this;
+    }
 }

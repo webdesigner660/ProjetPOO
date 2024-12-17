@@ -55,7 +55,7 @@ final class App
         session_start();
         $this->registerRoutes();
         $this->startRouter();
-        var_dump(Session::get(Session::USER));
+        //var_dump(Session::get(Session::USER));
     }
 
     private function __construct()
@@ -84,6 +84,7 @@ final class App
         $this->router->get('/inscription', [InscriptionController::class, 'inscription']);
         $this->router->post('/inscription', [InscriptionController::class, 'create']);
         $this->router->get('/reservation/{id}', [ReservationController::class, 'reservation']);
+        $this->router->post('/reservation/{id}', [ReservationController::class, 'CheckAuthReservation']);
         $this->router->get('/create-annonce', [AnnouncementController::class, 'CreateAnnonce']);
         $this->router->post('/create-annonce', [AnnouncementController::class, 'createAnnouncement']);
         $this->router->get('/announce', [AnnouncementController::class, 'ViewAnnounce']);
