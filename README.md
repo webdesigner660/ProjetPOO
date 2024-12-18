@@ -1,6 +1,6 @@
 Ce code est un projet PHP Objet qui recrée un site de locations d'habitations similaire au site Airbnb.
-Ce site permet dans un premier temps de visualiser une page avec des annonces sans pour autant y etre connecté ( donc en tant que visiteur il est tout à fait possible de voir de vraies annonces existantes dans la Base de données ).
-Ensuite, il y'a la possibilité de voir certains détails des annonces directement à partir de la première page.
+Ce site permet dans un premier temps de visualiser une page d'accueil avec des annonces sans pour autant y etre connecté ( donc en tant que visiteur il est tout à fait possible de voir de vraies annonces existantes dans la Base de données ).
+Ensuite, il y'a la possibilité de voir certains détails des annonces directement à partir de la page principale.
 On a également la possibilité de créer des comptes, une inscription ( directement cablés à la BDD ) avec un choix de role utilisateur ou annonceur ( user/owner ).
 On a aussi une connexion qui, comme l'inscription, est liée à la BDD et possible uniquement si un compté a été créé. Il ya 2 pages home, une page pour l'user, une pour l'owner, l'utilisateur arrivera sur une des 2 pages en fonction de son role et de son id, qui reconnait si c'est un user ou un owner grace à la BDD.
 Lorsque qu'on créer un compte, donc dans la partie inscription, l'utilisateur est directement redirigé vers la page home correcte en fonction de son role ( pas besoin de créer un compte puis de devoir se connecter manuellement, la connexion se fait toute seule lors de l'inscription ).
